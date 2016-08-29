@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Product list</h1>
+
+    <table class="table table-striped" id="products">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Weight</th>
+                <th>Visiblity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td><a href="{{ path('product_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.description }}</td>
+                {# {{dump(app.request.scheme ~ '://' ~ app.request.host ~ '/' ~ product.getWebPath)}} #}
+                {# TODO : desplay Image in the list #}
+                <td><img src="{{ product.getWebPath }}" /></td>
+                <td>{{ product.weight }}</td>
+                <td>{% if product.visiblity %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                            <a class="btn" href="{{ path('product_show', { 'id': product.id }) }}">show</a>
+                            <a class="btn" href="{{ path('product_edit', { 'id': product.id }) }}">edit</a>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+         <a  class="btn btn-default" href="{{ path('product_new') }}">Create a new Product</a>
+    </ul>
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#products').dataTable( {
+            "bFilter": true,
+        "aoColumns": [
+             null,
+            {
+            "sType": "uk_date"},
+            null,
+            null,
+             null,
+            null
+        ],
+        "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+        "sPaginationType": "bootstrap",
+        "oLanguage": {
+            "sProcessing":     "Traitement en cours...",
+            "sSearch":         "Rechercher&nbsp;:",
+            "sLengthMenu":     "_MENU_ &eacute;l&eacute;ments par page",
+            "sInfo":           " _START_ / _END_ sur _TOTAL_",
+            "sInfoEmpty":      "Aucun &eacute;l&eacute;ment renseign&eacute;",
+            "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+            "sInfoPostFix":    "",
+            "sLoadingRecords": "Chargement en cours...",
+            "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+            "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+            "oPaginate": {
+                "sFirst":      "Premier",
+                "sPrevious":   "Pr&eacute;c&eacute;dent",
+                "sNext":       "Suivant",
+                "sLast":       "Dernier"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activer pour trier la colonne par ordre croissant",
+                "sSortDescending": ": Activer pour trier la colonne par ordre décroissant"
+            }
+        }
+    });
+});
+</script>{% endblock %}
