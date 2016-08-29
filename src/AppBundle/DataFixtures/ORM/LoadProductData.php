@@ -11,6 +11,7 @@ class LoadProductData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
+        // TODO : add image by Fixture
         // Product 1
         $phone1 = new Product();
         $phone1->setName('Iphone');
@@ -18,7 +19,7 @@ class LoadProductData extends AbstractFixture implements OrderedFixtureInterface
         $phone1->setWeight(1);
         $phone1->setDescription('Iphone des1');
         $phone1->setVisiblity(true);
-        $phone1->setImage("dada");
+        // $phone1->setImage("dada");
         $phone1->setCategory($this->getReference('admin-tag1'));
         $manager->persist($phone1);
 
@@ -29,7 +30,7 @@ class LoadProductData extends AbstractFixture implements OrderedFixtureInterface
         $phone2->setWeight(1);
         $phone2->setDescription('Iphone des1');
         $phone2->setVisiblity(true);
-        $phone1->setImage("dada");
+        // $phone1->setImage("dada");
         $phone2->setCategory($this->getReference('admin-tag1'));
         $manager->persist($phone2);
 
@@ -40,7 +41,7 @@ class LoadProductData extends AbstractFixture implements OrderedFixtureInterface
         $phone3->setWeight(1);
         $phone3->setDescription('Iphone des1');
         $phone3->setVisiblity(true);
-        $phone1->setImage("dada");
+        // $phone1->setImage("dada");
         $phone3->setCategory($this->getReference('admin-tag1'));
         $manager->persist($phone3);
 
@@ -51,7 +52,7 @@ class LoadProductData extends AbstractFixture implements OrderedFixtureInterface
         $phone4->setWeight(1);
         $phone4->setDescription('Iphone des1');
         $phone4->setVisiblity(true);
-        $phone1->setImage("dada");
+        // $phone1->setImage("dada");
         $phone4->setCategory($this->getReference('admin-tag1'));
         $manager->persist($phone4);
 
