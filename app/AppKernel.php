@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Brown298\DataTablesBundle\Brown298DataTablesBundle(),
             // Used
             new AppBundle\AppBundle(),
         );

@@ -25,7 +25,7 @@
                 <td>{{ product.description }}</td>
                 {# {{dump(app.request.scheme ~ '://' ~ app.request.host ~ '/' ~ product.getWebPath)}} #}
                 {# TODO : desplay Image in the list #}
-                <td><img src="{{ product.getWebPath }}" /></td>
+                <td><img src="{{asset(product.getWebPath)}}"/></td>
                 <td>{{ product.weight }}</td>
                 <td>{% if product.visiblity %}Yes{% else %}No{% endif %}</td>
                 <td>

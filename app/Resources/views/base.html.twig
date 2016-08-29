@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}" />
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-        <link rel="stylesheet" href="{{ asset('https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css') }}" />
+        {# <link rel="stylesheet" href="{{ asset('https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css') }}" /> #}
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -23,23 +23,22 @@
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand" href="#">Administration de Ecomerce Phone!</a>
+                      <a class="navbar-brand" href="{{path('homepage')}}">Administration de Ecomerce Phone!</a>
                   </div>
 
                   {# Collect the nav links, forms, and other content for toggling #}
                   <div class="collapse navbar-collapse" id="admin-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                      <li class="active"><a href="{{path('product_index')}}">Products <span class="sr-only">(current)</span></a></li>
-                      <li><a href="{{path('category_index')}}">Category</a></li>
-                      <li class="dropdown">
+                      <li {% if "product_index" == app.request.get('_route') %}class="active"{% endif %}><a href="{{path('product_index')}}">Products <span class="sr-only">(current)</span></a></li>
+                      <li {% if "category_index" == app.request.get('_route') %}class="active"{% endif %}><a href="{{path('category_index')}}">Category</a></li>
+                      <li class="dropdown"></li>
+                    </ul>
                     {# {{ knp_menu_render('AppBundle:Builder:mainMenu') }} #}
-                      {# {{ knp_menu_render('AcmeHelloBundle:MenuBuilder:mainMenu', {'currentClass': 'active', 'template': 'AcmeHelloBundle:Menu:knp_menu.html.twig'}) }} #}
-                      {# {{ knp_menu_render('AcmeHelloBundle:MenuBuilder:userMenu', {'currentClass': 'active', 'template': 'AcmeHelloBundle:Menu:knp_menu.html.twig'}) }} #}
                   </div>
               </div>
           </div>
-            <div class="content" style="margin-top: 60px;">
-                {% block body %}{% endblock %}
+        <div class="content" style="margin-top: 60px;">
+            <div class="container">{% block body %}{% endblock %}</div>
         </div>
 
         <hr />
@@ -54,7 +53,9 @@
         {# TODO : use local file with assetic config #}
         <script   src="http://code.jquery.com/jquery.js" crossorigin="anonymous"></script>
         <script src="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js') }}"></script>
+        {% javascripts '@data_tables' %}
+          <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

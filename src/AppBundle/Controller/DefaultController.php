@@ -13,10 +13,21 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->redirectToRoute('product_index');
-        // replace this example code with whatever you need
+        $em = $this->getDoctrine()->getManager();
+        $products = $em->getRepository('AppBundle:Product')->findProductsForShow();
+        $categories = $em->getRepository('AppBundle:Category')->findAll();
         return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
-        ));
+            'products' => $products,
+            'categories' => $categories
+            )
+        );
+    }
+
+    /**
+     * @Route("/admin", name="adminpage")
+     */
+    public function adminAction()
+    {
+        return $this->redirectToRoute('product_index');
     }
 }

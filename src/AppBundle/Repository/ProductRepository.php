@@ -12,4 +12,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+    public function findProductsForShow($visible = true)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.visiblity = :visible')
+            ->setParameter('visible', $visible)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function getProductsByCats($cats)
+    {
+        return $this->createQueryBuilder('p')
+            ->innerJoin('p.category', 'c', 'with', 'c.id IN :cats')
+            ->setParameter('cats' , $cats)
+            ->getQuery()
+            ->getResult();
+    }
 }

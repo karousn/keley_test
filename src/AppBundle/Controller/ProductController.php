@@ -144,4 +144,15 @@ class ProductController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * Filter params
+     * @param  Request $request
+     * @param  array  $filterparams
+     * @return Respose
+     */
+    public function filterAction(Request $request , $filterparams)
+    {
+
+    }
 }

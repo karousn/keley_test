@@ -4,9 +4,124 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fcf29e87e1218319f04271c3b1086dce",
-    "content-hash": "6b59e141f00b94e5730506adcb079b93",
+    "hash": "58a540ca1d5176471200612df9da65eb",
+    "content-hash": "995fab633ba6a1764c737aa61ff4fd8d",
     "packages": [
+        {
+            "name": "ali/datatable",
+            "version": "v2.1.0",
+            "target-dir": "Ali/DatatableBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AliHichem/AliDatatableBundle.git",
+                "reference": "b7aeb1aa30f44ada757477bc225d17b8584b1a1f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AliHichem/AliDatatableBundle/zipball/b7aeb1aa30f44ada757477bc225d17b8584b1a1f",
+                "reference": "b7aeb1aa30f44ada757477bc225d17b8584b1a1f",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "~1.0",
+                "doctrine/orm": "~2.3",
+                "php": "~5.3|7.0",
+                "twig/twig": ">=1.8,<2.0-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ali\\DatatableBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ali hichem",
+                    "email": "ali.hichem@mail.com",
+                    "role": "Author"
+                }
+            ],
+            "description": "Symfony2 Ajax Datagrid Bundle for doctrine2 entities",
+            "homepage": "https://github.com/AliHichem/AliDatatableBundle",
+            "keywords": [
+                "Symfony2",
+                "datatable",
+                "jquery"
+            ],
+            "time": "2016-01-11 11:02:49"
+        },
+        {
+            "name": "brown298/data-tables-bundle",
+            "version": "0.4.2",
+            "target-dir": "Brown298/DataTablesBundle",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/brown298/datatablesbundle.git",
+                "reference": "956dbfcd3b5f68f83be570ce5d4a239edefb52b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/brown298/datatablesbundle/get/956dbfcd3b5f68f83be570ce5d4a239edefb52b9.zip",
+                "reference": "956dbfcd3b5f68f83be570ce5d4a239edefb52b9",
+                "shasum": ""
+            },
+            "require": {
+                "datatables/datatables": "~1.10.2",
+                "doctrine/orm": "~2.2,>=2.2.3",
+                "php": ">=5.3.3",
+                "symfony/symfony": ">=2.2.0,!=2.5.2",
+                "twig/twig": "~1.13@dev"
+            },
+            "require-dev": {
+                "brown298/test_extension": "dev-master",
+                "phake/phake": "2.0.*@dev",
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Brown298\\DataTablesBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "Adds DataTables functionality to Symfony2",
+            "homepage": "http://code.rbsolutions.us/datatables/",
+            "keywords": [
+                "Symfony2",
+                "datatables"
+            ],
+            "time": "2016-02-16 18:48:12"
+        },
+        {
+            "name": "datatables/datatables",
+            "version": "1.10.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataTables/DataTables.git",
+                "reference": "3a432c5db3546b2ef0c192f2ae367811cb5edb9b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataTables/DataTables/zipball/3a432c5db3546b2ef0c192f2ae367811cb5edb9b",
+                "reference": "3a432c5db3546b2ef0c192f2ae367811cb5edb9b",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table.",
+            "homepage": "http://www.datatables.net/",
+            "time": "2016-05-20 13:09:02"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
